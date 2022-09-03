@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{04111548-8B4E-4945-B414-3FADE4833D41}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="001-在系统菜单中添加菜单项\在系统菜单中添加菜单项.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="在系统菜单中添加菜单项">
+        <MSBuild Projects="001-在系统菜单中添加菜单项\在系统菜单中添加菜单项.dproj"/>
+    </Target>
+    <Target Name="在系统菜单中添加菜单项:Clean">
+        <MSBuild Projects="001-在系统菜单中添加菜单项\在系统菜单中添加菜单项.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="在系统菜单中添加菜单项:Make">
+        <MSBuild Projects="001-在系统菜单中添加菜单项\在系统菜单中添加菜单项.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="在系统菜单中添加菜单项"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="在系统菜单中添加菜单项:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="在系统菜单中添加菜单项:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
