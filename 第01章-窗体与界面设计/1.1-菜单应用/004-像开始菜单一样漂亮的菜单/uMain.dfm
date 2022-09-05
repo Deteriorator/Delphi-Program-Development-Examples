@@ -694,6 +694,7 @@ object Form4: TForm4
     ExplicitHeight = 158
   end
   object MainMenu1: TMainMenu
+    OwnerDraw = True
     Left = 24
     Top = 8
     object N1: TMenuItem
