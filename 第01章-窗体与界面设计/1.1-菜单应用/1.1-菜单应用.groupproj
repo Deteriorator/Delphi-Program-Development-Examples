@@ -18,6 +18,9 @@
         <Projects Include="005-多彩的菜单\多彩的菜单.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="006-可以拉伸的菜单界面\可以拉伸的菜单界面.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -71,14 +74,23 @@
     <Target Name="多彩的菜单:Make">
         <MSBuild Projects="005-多彩的菜单\多彩的菜单.dproj" Targets="Make"/>
     </Target>
+    <Target Name="可以拉伸的菜单界面">
+        <MSBuild Projects="006-可以拉伸的菜单界面\可以拉伸的菜单界面.dproj"/>
+    </Target>
+    <Target Name="可以拉伸的菜单界面:Clean">
+        <MSBuild Projects="006-可以拉伸的菜单界面\可以拉伸的菜单界面.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="可以拉伸的菜单界面:Make">
+        <MSBuild Projects="006-可以拉伸的菜单界面\可以拉伸的菜单界面.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="在系统菜单中添加菜单项;带历史信息的菜单;菜单动态合并;像开始菜单一样漂亮的菜单;多彩的菜单"/>
+        <CallTarget Targets="在系统菜单中添加菜单项;带历史信息的菜单;菜单动态合并;像开始菜单一样漂亮的菜单;多彩的菜单;可以拉伸的菜单界面"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="在系统菜单中添加菜单项:Clean;带历史信息的菜单:Clean;菜单动态合并:Clean;像开始菜单一样漂亮的菜单:Clean;多彩的菜单:Clean"/>
+        <CallTarget Targets="在系统菜单中添加菜单项:Clean;带历史信息的菜单:Clean;菜单动态合并:Clean;像开始菜单一样漂亮的菜单:Clean;多彩的菜单:Clean;可以拉伸的菜单界面:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="在系统菜单中添加菜单项:Make;带历史信息的菜单:Make;菜单动态合并:Make;像开始菜单一样漂亮的菜单:Make;多彩的菜单:Make"/>
+        <CallTarget Targets="在系统菜单中添加菜单项:Make;带历史信息的菜单:Make;菜单动态合并:Make;像开始菜单一样漂亮的菜单:Make;多彩的菜单:Make;可以拉伸的菜单界面:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
