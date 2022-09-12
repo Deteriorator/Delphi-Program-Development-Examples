@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6D9897F9-BDF1-48FC-8029-AED68C5F3656}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="007-带背景的工具栏\带背景的工具栏.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="带背景的工具栏">
+        <MSBuild Projects="007-带背景的工具栏\带背景的工具栏.dproj"/>
+    </Target>
+    <Target Name="带背景的工具栏:Clean">
+        <MSBuild Projects="007-带背景的工具栏\带背景的工具栏.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="带背景的工具栏:Make">
+        <MSBuild Projects="007-带背景的工具栏\带背景的工具栏.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="带背景的工具栏"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="带背景的工具栏:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="带背景的工具栏:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
