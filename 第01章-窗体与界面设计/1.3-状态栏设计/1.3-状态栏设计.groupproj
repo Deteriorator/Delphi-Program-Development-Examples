@@ -9,6 +9,9 @@
         <Projects Include="010-带进度条的状态栏\带进度条的状态栏.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="011-状态栏中加入图标\状态栏中加入图标.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="带进度条的状态栏:Make">
         <MSBuild Projects="010-带进度条的状态栏\带进度条的状态栏.dproj" Targets="Make"/>
     </Target>
+    <Target Name="状态栏中加入图标">
+        <MSBuild Projects="011-状态栏中加入图标\状态栏中加入图标.dproj"/>
+    </Target>
+    <Target Name="状态栏中加入图标:Clean">
+        <MSBuild Projects="011-状态栏中加入图标\状态栏中加入图标.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="状态栏中加入图标:Make">
+        <MSBuild Projects="011-状态栏中加入图标\状态栏中加入图标.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="在状态栏中显示检查框;带进度条的状态栏"/>
+        <CallTarget Targets="在状态栏中显示检查框;带进度条的状态栏;状态栏中加入图标"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="在状态栏中显示检查框:Clean;带进度条的状态栏:Clean"/>
+        <CallTarget Targets="在状态栏中显示检查框:Clean;带进度条的状态栏:Clean;状态栏中加入图标:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="在状态栏中显示检查框:Make;带进度条的状态栏:Make"/>
+        <CallTarget Targets="在状态栏中显示检查框:Make;带进度条的状态栏:Make;状态栏中加入图标:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
