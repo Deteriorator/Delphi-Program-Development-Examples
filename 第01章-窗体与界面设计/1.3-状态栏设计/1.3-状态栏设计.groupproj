@@ -6,6 +6,9 @@
         <Projects Include="009-在状态栏中显示检查框\在状态栏中显示检查框.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="010-带进度条的状态栏\带进度条的状态栏.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -23,14 +26,23 @@
     <Target Name="在状态栏中显示检查框:Make">
         <MSBuild Projects="009-在状态栏中显示检查框\在状态栏中显示检查框.dproj" Targets="Make"/>
     </Target>
+    <Target Name="带进度条的状态栏">
+        <MSBuild Projects="010-带进度条的状态栏\带进度条的状态栏.dproj"/>
+    </Target>
+    <Target Name="带进度条的状态栏:Clean">
+        <MSBuild Projects="010-带进度条的状态栏\带进度条的状态栏.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="带进度条的状态栏:Make">
+        <MSBuild Projects="010-带进度条的状态栏\带进度条的状态栏.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="在状态栏中显示检查框"/>
+        <CallTarget Targets="在状态栏中显示检查框;带进度条的状态栏"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="在状态栏中显示检查框:Clean"/>
+        <CallTarget Targets="在状态栏中显示检查框:Clean;带进度条的状态栏:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="在状态栏中显示检查框:Make"/>
+        <CallTarget Targets="在状态栏中显示检查框:Make;带进度条的状态栏:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
