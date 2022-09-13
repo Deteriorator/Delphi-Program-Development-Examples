@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B23062DC-5361-490B-BBDE-0D792635C6EC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="009-在状态栏中显示检查框\在状态栏中显示检查框.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="在状态栏中显示检查框">
+        <MSBuild Projects="009-在状态栏中显示检查框\在状态栏中显示检查框.dproj"/>
+    </Target>
+    <Target Name="在状态栏中显示检查框:Clean">
+        <MSBuild Projects="009-在状态栏中显示检查框\在状态栏中显示检查框.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="在状态栏中显示检查框:Make">
+        <MSBuild Projects="009-在状态栏中显示检查框\在状态栏中显示检查框.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="在状态栏中显示检查框"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="在状态栏中显示检查框:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="在状态栏中显示检查框:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
