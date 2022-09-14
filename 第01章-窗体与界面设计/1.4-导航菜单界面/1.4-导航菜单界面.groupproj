@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B6E01BC5-9B4C-432A-8DB9-B99C88F21B3A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="012-OutLook界面\OutLook界面.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OutLook界面">
+        <MSBuild Projects="012-OutLook界面\OutLook界面.dproj"/>
+    </Target>
+    <Target Name="OutLook界面:Clean">
+        <MSBuild Projects="012-OutLook界面\OutLook界面.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OutLook界面:Make">
+        <MSBuild Projects="012-OutLook界面\OutLook界面.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OutLook界面"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OutLook界面:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OutLook界面:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
