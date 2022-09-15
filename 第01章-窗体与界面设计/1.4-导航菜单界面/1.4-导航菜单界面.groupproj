@@ -9,6 +9,9 @@
         <Projects Include="013-带导航菜单的主界面\带导航菜单的主界面.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="014-图形化的导航界面\图形化的导航界面.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="带导航菜单的主界面:Make">
         <MSBuild Projects="013-带导航菜单的主界面\带导航菜单的主界面.dproj" Targets="Make"/>
     </Target>
+    <Target Name="图形化的导航界面">
+        <MSBuild Projects="014-图形化的导航界面\图形化的导航界面.dproj"/>
+    </Target>
+    <Target Name="图形化的导航界面:Clean">
+        <MSBuild Projects="014-图形化的导航界面\图形化的导航界面.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="图形化的导航界面:Make">
+        <MSBuild Projects="014-图形化的导航界面\图形化的导航界面.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="OutLook界面;带导航菜单的主界面"/>
+        <CallTarget Targets="OutLook界面;带导航菜单的主界面;图形化的导航界面"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="OutLook界面:Clean;带导航菜单的主界面:Clean"/>
+        <CallTarget Targets="OutLook界面:Clean;带导航菜单的主界面:Clean;图形化的导航界面:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="OutLook界面:Make;带导航菜单的主界面:Make"/>
+        <CallTarget Targets="OutLook界面:Make;带导航菜单的主界面:Make;图形化的导航界面:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
