@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D56E1546-030C-41F2-95DF-8801D045D130}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="015-类QQ的程序界面\类QQ的程序界面.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="类QQ的程序界面">
+        <MSBuild Projects="015-类QQ的程序界面\类QQ的程序界面.dproj"/>
+    </Target>
+    <Target Name="类QQ的程序界面:Clean">
+        <MSBuild Projects="015-类QQ的程序界面\类QQ的程序界面.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="类QQ的程序界面:Make">
+        <MSBuild Projects="015-类QQ的程序界面\类QQ的程序界面.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="类QQ的程序界面"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="类QQ的程序界面:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="类QQ的程序界面:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
