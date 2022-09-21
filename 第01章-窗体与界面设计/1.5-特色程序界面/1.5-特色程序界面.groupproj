@@ -18,6 +18,9 @@
         <Projects Include="019-以XPManifest组件显示界面\以XPManifest组件显示界面.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="020-动态按钮的窗体界面\动态按钮的窗体界面.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -71,14 +74,23 @@
     <Target Name="以XPManifest组件显示界面:Make">
         <MSBuild Projects="019-以XPManifest组件显示界面\以XPManifest组件显示界面.dproj" Targets="Make"/>
     </Target>
+    <Target Name="动态按钮的窗体界面">
+        <MSBuild Projects="020-动态按钮的窗体界面\动态按钮的窗体界面.dproj"/>
+    </Target>
+    <Target Name="动态按钮的窗体界面:Clean">
+        <MSBuild Projects="020-动态按钮的窗体界面\动态按钮的窗体界面.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="动态按钮的窗体界面:Make">
+        <MSBuild Projects="020-动态按钮的窗体界面\动态按钮的窗体界面.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="类QQ的程序界面;类似WindowsXP的程序界面;以图形按钮显示的界面;以树型显示的程序界面;以XPManifest组件显示界面"/>
+        <CallTarget Targets="类QQ的程序界面;类似WindowsXP的程序界面;以图形按钮显示的界面;以树型显示的程序界面;以XPManifest组件显示界面;动态按钮的窗体界面"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="类QQ的程序界面:Clean;类似WindowsXP的程序界面:Clean;以图形按钮显示的界面:Clean;以树型显示的程序界面:Clean;以XPManifest组件显示界面:Clean"/>
+        <CallTarget Targets="类QQ的程序界面:Clean;类似WindowsXP的程序界面:Clean;以图形按钮显示的界面:Clean;以树型显示的程序界面:Clean;以XPManifest组件显示界面:Clean;动态按钮的窗体界面:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="类QQ的程序界面:Make;类似WindowsXP的程序界面:Make;以图形按钮显示的界面:Make;以树型显示的程序界面:Make;以XPManifest组件显示界面:Make"/>
+        <CallTarget Targets="类QQ的程序界面:Make;类似WindowsXP的程序界面:Make;以图形按钮显示的界面:Make;以树型显示的程序界面:Make;以XPManifest组件显示界面:Make;动态按钮的窗体界面:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
