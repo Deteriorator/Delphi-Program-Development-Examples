@@ -2,7 +2,7 @@
 
 uses
   Vcl.Forms,
-  uMain in 'uMain.pas' {Form3};
+  uMain in 'uMain.pas' {MAIN};
 
 {$R *.res}
 
